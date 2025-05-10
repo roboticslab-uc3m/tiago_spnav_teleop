@@ -2,6 +2,16 @@
 
 TIAGo (and TIAGo++) arm teleoperation with 3Dconnexion's SpaceMouse.
 
+## Dependencies
+
+This project depends on the [spacenav_node](https://wiki.ros.org/spacenav_node) ROS package and daemon service. Make sure you have installed them prior to launching the tiago_spnav_teleop controller:
+
+```
+sudo apt install ros-${ROS_DISTRO}-spacenav-node spacenavd
+```
+
+Once the daemon is loaded, a blue light should be seen on the SpaceMouse when plugged in.
+
 ## Running in simulation
 
 We recommend Docker. It is assumed that you have cloned this repository inside your current working directory.
