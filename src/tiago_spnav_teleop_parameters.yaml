@@ -1,0 +1,59 @@
+spnav_controller:
+  arm_joint_names:
+    type: string_array
+    default_value: ["arm_1_joint", "arm_2_joint", "arm_3_joint", "arm_4_joint", "arm_5_joint", "arm_6_joint", "arm_7_joint"]
+    description: "Joint names for the arm"
+    read_only: true
+    validation:
+      unique<>: null
+      not_empty<>: null
+  gripper_joint_names:
+    type: string_array
+    default_value: ["gripper_left_finger_joint", "gripper_right_finger_joint"]
+    description: "Joint names for the gripper"
+    read_only: true
+    validation:
+      unique<>: null
+      not_empty<>: null
+  ik_solver_vel_eps:
+    type: double
+    default_value: 0.01
+    description: "Epsilon value for the IK solver"
+    read_only: true
+    validation:
+      gt<>: [0]
+  ik_solver_vel_max_iter:
+    type: int
+    default_value: 100
+    description: "Maximum iterations for the IK solver"
+    read_only: true
+    validation:
+      gt<>: [0]
+  start_link:
+    type: string
+    default_value: "torso_lift_link"
+    description: "Start link for the IK solver"
+    read_only: true
+    validation:
+      not_empty<>: null
+  end_link:
+    type: string
+    default_value: "gripper_grasping_frame"
+    description: "End link for the IK solver"
+    read_only: true
+    validation:
+      not_empty<>: null
+  joy_arm_scale:
+    type: double
+    default_value: 0.5
+    description: "Scale for the joystick arm control"
+    read_only: true
+    validation:
+      gt<>: [0]
+  joy_gripper_increment:
+    type: double
+    default_value: 0.002
+    description: "Increment for the joystick gripper control"
+    read_only: true
+    validation:
+      gt<>: [0]

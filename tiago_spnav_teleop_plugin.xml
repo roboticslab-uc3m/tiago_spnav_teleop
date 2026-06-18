@@ -1,0 +1,5 @@
+<library path="tiago_spnav_teleop">
+    <class name="tiago_spnav_teleop/SpnavController"
+           type="spnav_controller::SpnavController"
+           base_class_type="controller_interface::ControllerInterface" />
+</library>

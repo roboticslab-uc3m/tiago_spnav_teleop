@@ -1,4 +1,4 @@
-<package format="2">
+<package format="3">
     <name>tiago_spnav_teleop</name>
     <version>1.0.0</version>
     <description>A fancy controller for TIAGo and the SpaceNavigator 3D mouse.</description>
@@ -7,21 +7,23 @@
     <maintainer email="anacg1620@gmail.com">Ana Calzada</maintainer>
     <license>LGPLv2.1</license>
 
-    <buildtool_depend>catkin</buildtool_depend>
+    <buildtool_depend>ament_cmake</buildtool_depend>
 
+    <build_depend>ros2_control_cmake</build_depend>
+
+    <depend>generate_parameter_library</depend>
     <depend>actionlib</depend>
     <depend>play_motion_msgs</depend>
     <depend>sensor_msgs</depend>
-    <depend>controller_manager_msgs</depend>
     <depend>controller_interface</depend>
     <depend>hardware_interface</depend>
     <depend>pluginlib</depend>
-    <depend>roscpp</depend>
+    <depend>rclcpp</depend>
     <depend>orocos_kdl</depend>
     <depend>kdl_parser</depend>
     <depend>urdf</depend>
 
     <export>
-        <controller_interface plugin="${prefix}/tiago_spnav_teleop_plugins.xml"/>
+        <build_type>ament_cmake</build_type>
     </export>
   </package>

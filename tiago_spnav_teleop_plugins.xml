@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<library path="lib/libtiago_spnav_teleop">
-    <class name="tiago_spnav_teleop/SpnavControllerPlugin"
-          type="tiago_controllers::SpnavController"
-          base_class_type="controller_interface::ControllerBase" />
-</library>
