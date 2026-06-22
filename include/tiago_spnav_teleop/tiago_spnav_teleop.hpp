@@ -3,7 +3,6 @@
 
 #include <array>
 #include <memory> // std::unique_ptr
-#include <mutex>
 #include <utility> // std::pair
 #include <vector>
 #include <controller_interface/controller_interface.hpp>
@@ -50,7 +49,6 @@ private:
   KDL::JntArray q;
 
   rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr spnav_subscription;
-  std::mutex mtx;
 };
 
 } //namespace

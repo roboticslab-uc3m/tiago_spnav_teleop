@@ -161,13 +161,10 @@ controller_interface::CallbackReturn SpnavController::on_error(const rclcpp_life
 controller_interface::return_type SpnavController::update(const rclcpp::Time & time, const rclcpp::Duration & period)
 {
   KDL::JntArray qdot(params.arm_joint_names.size());
-  KDL::Twist tw;
 
-  {
-    std::lock_guard lock(mtx);
-    tw.vel = {joy_axes[0], joy_axes[1], joy_axes[2]};
-    tw.rot = {joy_axes[3], joy_axes[4], joy_axes[5]};
-  }
+  KDL::Twist tw;
+  tw.vel = {joy_axes[0], joy_axes[1], joy_axes[2]};
+  tw.rot = {joy_axes[3], joy_axes[4], joy_axes[5]};
 
   if (!checkReturnCode(ik_solver_vel->CartToJnt(q, tw, qdot)))
   {
@@ -258,7 +255,6 @@ bool SpnavController::checkReturnCode(int ret)
 
 void SpnavController::spnavCallback(const sensor_msgs::msg::Joy::SharedPtr msg)
 {
-  std::lock_guard lock(mtx);
   std::copy(msg->axes.cbegin(), msg->axes.cend(), joy_axes.begin());
   std::copy(msg->buttons.cbegin(), msg->buttons.cend(), joy_buttons.begin());
 }
