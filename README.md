@@ -120,3 +120,4 @@ Calzada García, A., Łukawski, B., Victores, J., & Balaguer, C. (2024). Teleope
 
 - [demo application (YouTube)](https://youtu.be/3DYZG5At-Gw)
 - [roboticslab-uc3m/tiago_telepresence_controllers](https://github.com/roboticslab-uc3m/tiago_telepresence_controllers)
+- [roboticslab-uc3m/rl_cartesian_controllers](https://github.com/roboticslab-uc3m/rl_cartesian_controllers)
